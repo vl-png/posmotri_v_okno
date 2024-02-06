@@ -55,7 +55,7 @@ ol {
   display: flex;
   align-items: end;
   gap: 30px;
-  margin:auto auto;
+  margin: auto;
   vertical-align: middle;
 }
 
@@ -68,6 +68,7 @@ ol {
 .result__video-container {
   position: relative;
   inline-size: 711px;
+  block-size: 386px;
 }
 
 .result__video {
@@ -81,7 +82,6 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: start;
-  block-size: 54px;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -105,7 +105,7 @@ ol {
 
 .search-form__textfield {
   min-inline-size: 225px;
-  block-size: 27px;
+  min-block-size: 27px;
   border: none;
   border-block-start: 1px solid currentColor;
   border-block-end: 1px solid currentColor;
@@ -119,7 +119,16 @@ ol {
   appearance: none;
 }
 
+.search-form__textfield:active {
+  outline: 1px solid #FFF;
+  border: none;
+}
+
 .search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:focus-visible {
   outline: none;
 }
 
@@ -172,10 +181,9 @@ ol {
 .content__details {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 23px;
   overflow: hidden;
   inline-size: 400px;
-  block-size: 534px;
 }
 
 .title {
@@ -198,15 +206,7 @@ ol {
   overflow-x: hidden;
   overflow-y: auto;
   min-inline-size: 400px;
-  block-size: 100%;
-}
-
-.content__list-item:focus {
-  outline: none;
-}
-
-.content__list-item:focus-visible {
-  outline: 1px solid #FFF;
+  block-size: 298px;
 }
 
 .content__list-item:not(:last-child) {
@@ -214,6 +214,7 @@ ol {
 }
 
 .content__card-link {
+  display: block;
   color: #fff;
   text-decoration: none;
 }
@@ -223,13 +224,20 @@ ol {
 }
 
 .content__card-link_current {
-  display: block;
   background: #545050;
 }
 
 .content__card-link:hover {
   text-decoration: underline;
   text-underline-position: under;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #FFF;
 }
 
 .content__video-card {
@@ -245,6 +253,7 @@ ol {
 
 .content__video-card-title {
   display: block;
+  margin-block-start: 3px;
   margin-block-end: 6px;
   font-family: Oswald, sans-serif;
   font-weight: 700;
